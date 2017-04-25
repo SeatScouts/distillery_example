@@ -29,6 +29,6 @@ defmodule DistilleryExample.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:distillery, "~> 1.3.5"}]
   end
 end
