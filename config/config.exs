@@ -29,7 +29,7 @@ use Mix.Config
 #
 #     import_config "#{Mix.env}.exs"
 config :logger,
-  backends: [LogflareLogger.HttpBackend, {LoggerFileBackend, :info_log}, :console],
+  backends: [LogflareLogger.HttpBackend, :console],
   utc_log: true,
   truncate: 4096,
   level: :info,
