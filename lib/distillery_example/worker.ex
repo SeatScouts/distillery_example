@@ -11,8 +11,6 @@ defmodule DistilleryExample.Worker do
   end
 
   def handle_info(:do_work, state) do
-    IO.puts "Did work"
-    :init.stop()
     {:noreply, state}
   end
 end
