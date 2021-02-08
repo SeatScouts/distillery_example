@@ -28,6 +28,17 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
+config :logger,
+  backends: [LogflareLogger.HttpBackend, {LoggerFileBackend, :info_log}, :console],
+  utc_log: true,
+  truncate: 4096,
+  level: :info,
+  sync_threshold: 500,
+  discard_threshold: 500
+
+config :logger, :info_log,
+  path: "log/thelog.log",
+  level: :info
 
 config :logflare_logger_backend,
   # Default LogflareLogger level is :info. Note that log messages are filtered by the :logger application first
