@@ -28,3 +28,13 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
+
+config :logflare_logger_backend,
+  # Default LogflareLogger level is :info. Note that log messages are filtered by the :logger application first
+  level: :info,
+  api_key: "N0uFpIjfsu7N",
+  source_id: "${LOGFLARE_SOURCE_ID}",
+  # minimum time in ms before a log batch is sent to the server ",
+  flush_interval: 1_000,
+  # maximum number of events before a log batch is sent to the server
+  max_batch_size: 50
